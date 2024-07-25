@@ -1,0 +1,30 @@
+.header {
+
+  // .header__container
+  &__container {
+    padding-top: toRem(5);
+    padding-bottom: toRem(5);
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    column-gap: toRem(5);
+  }
+
+  // .header__logo
+  &__logo {
+    flex-grow: 1;
+  }
+
+  // .header__menu
+  &__menu {
+    margin-right: 25px;
+  }
+
+  // .header__search
+  &__search {
+    svg {
+      width: toRem(19);
+      height: toRem(19);
+    }
+  }
+}
