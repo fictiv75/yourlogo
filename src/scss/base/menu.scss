@@ -14,6 +14,8 @@
       overflow: auto;
       padding: toRem(80) toRem(15) toRem(15) toRem(30);
       transition: left 0.3s;
+      background-color: #fff;
+      z-index: 2;
 
       &::before {
         content: "";

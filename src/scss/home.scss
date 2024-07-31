@@ -1,3 +1,90 @@
-//====================================================================================================
+//====================================Hero start======================================================
+.hero {
+  display: grid;
+  @include adaptiveValue("min-height", 655, 450);
 
-//====================================================================================================
+  &::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.8);
+    grid-area: 1/-1;
+  }
+
+  // .hero__content
+  &__content {
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+    grid-area: 1/-1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: auto;
+    @include adaptiveValue("padding-top", 174, 50);
+    @include adaptiveValue("padding-bottom", 67, 25);
+  }
+
+  // .hero__title
+  &__title {
+    font-weight: 600;
+    letter-spacing: 0.05em;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(30);
+    }
+
+    @include adaptiveValue("font-size", 60, 30);
+  }
+
+  // .hero__descr
+  &__descr {
+    margin-bottom: 110px;
+    font-size: toRem(22);
+    letter-spacing: 0.05em;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 110, 50);
+    }
+
+    
+  }
+
+  // .hero__buttons
+  &__buttons {
+    display: inline-flex;
+    gap: 25px;
+    align-self: center;
+
+    @media (max-width: toEm(576)) {
+      flex-direction: column;
+    }
+  }
+
+  // .hero__arrow
+  &__arrow {
+    position: relative;
+    margin-top: auto;
+    animation: arrow 2s infinite ease;
+  }
+
+  // .hero__arrow-icon
+  &__arrow-icon {
+    width: 23px;
+    height: 25px;
+    fill: #fff;
+  }
+}
+
+@keyframes arrow {
+  0% {
+    top: 0;
+  }
+
+  50% {
+    top: 10px;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+//=====================================Hero end=======================================================

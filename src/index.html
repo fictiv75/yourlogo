@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-	@@include('html/_head.htm',{
-	"title":"Your Logo"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_js.htm',{})
-	</body>
+@@include('html/_head.htm',{
+"title":"Your Logo"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{})
+    <main class="page">
+      <section class="page__hero hero">
+        <div class="hero__content">
+          <h1 class="hero__title">Web development project</h1>
+          <div class="hero__descr">
+            <p>Very suitable to support all web development projects</p>
+          </div>
+          <div class="hero__buttons">
+            <a href="#" class="button button--empty">Our services</a>
+            <a href="#" class="button button--full">Hire is now</a>
+          </div>
+          <a href="#" class="hero__arrow">
+            <svg class="hero__arrow-icon">
+              <use xlink:href="@img/icons/icons.svg#arrow_down"></use>
+            </svg>
+          </a>
+        </div>
+      </section>
+    </main>
+    @@include('html/_footer.htm',{})
+  </div>
+  @@include('html/_js.htm',{})
+</body>
+
 </html>

@@ -1,2 +1,10 @@
 .logo {
 }
+
+.page {
+		// .page__hero
+		&__hero {
+      background: url('@img/hero/hero-bg.jpg') 0 0 no-repeat;
+      background-size: cover;
+		}
+}

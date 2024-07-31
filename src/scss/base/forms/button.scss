@@ -2,13 +2,74 @@
 // Сніппет (HTML): btn
 
 .button {
-	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&--fw {
-		width: 100%;
-	}
+  position: relative;
+  display: inline-flex;
+  padding: 23px 35px;
+  font-size: toRem(20);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: all 650ms;
+  }
+
+  @media (max-width:$mobileSmall) {
+    padding: 15px 25px;
+    font-size: toRem(18);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        left: 100%;
+      }
+    }
+  }
+
+  // .button--empty
+  &--empty {
+    border: 3px solid #f8f8f8;
+
+    &::before {
+      background: linear-gradient(120deg,
+          transparent,
+          rgba(146, 148, 248, 0.4),
+          transparent);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+      }
+    }
+  }
+
+  // .button--full
+  &--full {
+    padding-left: 43px;
+    padding-right: 43px;
+    background-color: rgb(0, 137, 123);
+
+    &::before {
+      background: linear-gradient(90deg, transparent, rgba(9, 121, 116, 1) 35%, transparent);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 1px 1px 25px 10px rgba(0, 137, 123, 0.4);
+      }
+    }
+  }
+
+  &--fw {
+    width: 100%;
+  }
 }
