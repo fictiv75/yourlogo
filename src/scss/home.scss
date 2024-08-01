@@ -45,7 +45,7 @@
       @include adaptiveValue("margin-bottom", 110, 50);
     }
 
-    
+
   }
 
   // .hero__buttons
@@ -87,4 +87,57 @@
     top: 0;
   }
 }
+
 //=====================================Hero end=======================================================
+//=====================================About start=======================================================
+.about {
+
+  // .about__heading
+  &__heading {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 113, 30);
+      ;
+    }
+  }
+
+  // .about__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, (minmax(280px, 1fr)));
+    gap: toRem(25);
+  }
+}
+
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: toRem(13) toRem(45);
+
+  // .about-card__icon
+  &__icon {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 36, 30);
+    }
+  }
+
+  // .about-card__title
+  &__title {
+    font-size: toRem(20);
+    letter-spacing: 0.05em;
+    line-height: 22px;
+    font-weight: 600;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(16);
+    }
+  }
+
+  // .about-card__descr
+  &__descr {
+    line-height: 1.45;
+    text-align: center;
+  }
+}
+//=====================================About end=======================================================
