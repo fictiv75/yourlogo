@@ -140,4 +140,105 @@
     text-align: center;
   }
 }
+
 //=====================================About end=======================================================
+//=====================================Services start=======================================================
+.services {
+
+  // .services__heading
+  &__heading {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 114, 30);
+      ;
+    }
+  }
+
+  // .services__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, (minmax(toRem(280), 1fr)));
+    gap: toRem(30);
+  }
+}
+
+.services-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: toRem(59) toRem(55) toRem(49) toRem(55);
+  background-color: #fff;
+
+  @media (max-width:$mobile) {
+    padding: toRem(59) toRem(15) toRem(49) toRem(15);
+  }
+
+
+  // .services-card__image
+  &__image {
+    &:not(:last-child) {
+      margin-bottom: toRem(36);
+    }
+
+    // .services-card__image--hover
+    &--hover {
+      display: none;
+    }
+  }
+
+  // .services-card__title
+  &__title {
+    font-weight: 600;
+    font-size: toRem(20);
+    letter-spacing: 0.05em;
+    &:not(:last-child) {margin-bottom: toRem(15);}
+  }
+
+  // .services-card__descr
+  &__descr {
+    flex: 1 1 auto;
+    text-align: center;
+    line-height: 1.65;
+    &:not(:last-child) {margin-bottom: toRem(44);}
+  }
+
+  // .services-card__btn
+  &__btn {
+    font-weight: 600;
+    font-size: toRem(20);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: toRem(15) toRem(11);
+    border: toRem(2) solid $mainColor;
+    transition: all 0.3s;
+  }
+
+  &.active {
+    cursor: pointer;
+    background-color: $acceptColor;
+
+    .services-card__image--normal {
+      display: none;
+    }
+
+    .services-card__image--hover {
+      display: block;
+    }
+
+    .services-card__descr,
+    .services-card__title {
+      color: #fff;
+    }
+
+    .services-card__btn {
+      @media (any-hover: hover) {
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+//=====================================Services end=======================================================

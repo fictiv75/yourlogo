@@ -38,4 +38,11 @@
     @include adaptiveValue("padding-top", 122, 50);
     @include adaptiveValue("padding-bottom", 123, 50);
   }
+
+  // .page__services
+  &__services {
+    background-color: #e4fdf9;
+    @include adaptiveValue("padding-top", 158, 50);
+    @include adaptiveValue("padding-bottom", 126, 50);
+  }
 }

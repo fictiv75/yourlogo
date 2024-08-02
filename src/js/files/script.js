@@ -11,3 +11,11 @@ if (seacrhIcon) {
     searchBody.classList.toggle("active");
   });
 }
+
+const cards = document.querySelectorAll(".services-card");
+cards.forEach((item) => {
+  item.addEventListener("mouseover", () => {
+    cards.forEach((el) => el.classList.remove("active"));
+    item.classList.add("active");
+  });
+});
